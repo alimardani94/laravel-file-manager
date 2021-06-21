@@ -19,7 +19,7 @@ class FileUpdate
     /**
      * @var \Illuminate\Http\UploadedFile
      */
-    private $file;
+    public $file;
 
     /**
      * FileUpdate constructor.

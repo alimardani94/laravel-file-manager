@@ -19,7 +19,7 @@ class FilesUploaded
     /**
      * @var \Illuminate\Http\UploadedFile
      */
-    private $files;
+    public $files;
 
     /**
      * @var string|null
