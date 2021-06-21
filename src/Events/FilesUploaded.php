@@ -1,6 +1,6 @@
 <?php
 
-namespace Alexusmai\LaravelFileManager\Events;
+namespace Alimardani94\LaravelFileManager\Events;
 
 use Illuminate\Http\Request;
 
