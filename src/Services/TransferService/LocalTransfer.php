@@ -1,8 +1,8 @@
 <?php
 
-namespace Alexusmai\LaravelFileManager\Services\TransferService;
+namespace Alimardani94\LaravelFileManager\Services\TransferService;
 
-use Alexusmai\LaravelFileManager\Traits\PathTrait;
+use Alimardani94\LaravelFileManager\Traits\PathTrait;
 use Storage;
 
 class LocalTransfer extends Transfer

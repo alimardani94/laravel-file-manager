@@ -5,7 +5,7 @@
 - download a new version
 
 ```
-composer update alexusmai/laravel-file-manager
+composer update alimardani94/laravel-file-manager
 ```
 
 - Update config file and assets(js)

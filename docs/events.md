@@ -2,12 +2,12 @@
 
 ### BeforeInitialization
 
-> Alexusmai\LaravelFileManager\Events\BeforeInitialization
+> Alimardani94\LaravelFileManager\Events\BeforeInitialization
 
 Example:
 
 ```php
-\Event::listen('Alexusmai\LaravelFileManager\Events\BeforeInitialization',
+\Event::listen('Alimardani94\LaravelFileManager\Events\BeforeInitialization',
     function ($event) {
         
     }
@@ -16,12 +16,12 @@ Example:
 
 ### DiskSelected
 
-> Alexusmai\LaravelFileManager\Events\DiskSelected
+> Alimardani94\LaravelFileManager\Events\DiskSelected
 
 Example:
 
 ```php
-\Event::listen('Alexusmai\LaravelFileManager\Events\DiskSelected',
+\Event::listen('Alimardani94\LaravelFileManager\Events\DiskSelected',
     function ($event) {
         \Log::info('DiskSelected:', [$event->disk()]);
     }
@@ -30,10 +30,10 @@ Example:
 
 ### FilesUploading
 
-> Alexusmai\LaravelFileManager\Events\FilesUploading
+> Alimardani94\LaravelFileManager\Events\FilesUploading
 
 ```php
-\Event::listen('Alexusmai\LaravelFileManager\Events\FilesUploading',
+\Event::listen('Alimardani94\LaravelFileManager\Events\FilesUploading',
     function ($event) {
         \Log::info('FilesUploading:', [
             $event->disk(),
@@ -47,10 +47,10 @@ Example:
 
 ### FilesUploaded
 
-> Alexusmai\LaravelFileManager\Events\FilesUploaded
+> Alimardani94\LaravelFileManager\Events\FilesUploaded
 
 ```php
-\Event::listen('Alexusmai\LaravelFileManager\Events\FilesUploaded',
+\Event::listen('Alimardani94\LaravelFileManager\Events\FilesUploaded',
     function ($event) {
         \Log::info('FilesUploaded:', [
             $event->disk(),
@@ -64,10 +64,10 @@ Example:
 
 ### Deleting
 
-> Alexusmai\LaravelFileManager\Events\Deleting
+> Alimardani94\LaravelFileManager\Events\Deleting
 
 ```php
-\Event::listen('Alexusmai\LaravelFileManager\Events\Deleting',
+\Event::listen('Alimardani94\LaravelFileManager\Events\Deleting',
     function ($event) {
         \Log::info('Deleting:', [
             $event->disk(),
@@ -79,10 +79,10 @@ Example:
 
 ### Deleted
 
-> Alexusmai\LaravelFileManager\Events\Deleted
+> Alimardani94\LaravelFileManager\Events\Deleted
 
 ```php
-\Event::listen('Alexusmai\LaravelFileManager\Events\Deleted',
+\Event::listen('Alimardani94\LaravelFileManager\Events\Deleted',
     function ($event) {
         \Log::info('Deleted:', [
             $event->disk(),
@@ -94,10 +94,10 @@ Example:
 
 ### Paste
 
-> Alexusmai\LaravelFileManager\Events\Paste
+> Alimardani94\LaravelFileManager\Events\Paste
 
 ```php
-\Event::listen('Alexusmai\LaravelFileManager\Events\Paste',
+\Event::listen('Alimardani94\LaravelFileManager\Events\Paste',
     function ($event) {
         \Log::info('Paste:', [
             $event->disk(),
@@ -110,7 +110,7 @@ Example:
 
 ### Rename
 
-> Alexusmai\LaravelFileManager\Events\Rename
+> Alimardani94\LaravelFileManager\Events\Rename
 
 ```php
 \Event::listen('Alexusmai\LaravelFileManager\Events\Rename',

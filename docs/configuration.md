@@ -120,7 +120,7 @@ Create new class - example - TestConfigRepository
 ```php
 namespace App\Http;
 
-use Alexusmai\LaravelFileManager\Services\ConfigService\ConfigRepository;
+use Alimardani94\LaravelFileManager\Services\ConfigService\ConfigRepository;
 
 class TestConfigRepository implements ConfigRepository
 {
@@ -148,7 +148,7 @@ class TestConfigRepository implements ConfigRepository
 }
 ```
 
-For example see [src/Services/ConfigService/DefaultConfigRepository.php](https://github.com/alexusmai/laravel-file-manager/blob/master/src/Services/ConfigService/DefaultConfigRepository.php)
+For example see [src/Services/ConfigService/DefaultConfigRepository.php](https://github.com/alimardani94/laravel-file-manager/blob/master/src/Services/ConfigService/DefaultConfigRepository.php)
 
 ## What's next
 

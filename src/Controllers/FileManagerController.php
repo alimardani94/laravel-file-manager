@@ -1,25 +1,25 @@
 <?php
 
-namespace Alexusmai\LaravelFileManager\Controllers;
+namespace Alimardani94\LaravelFileManager\Controllers;
 
-use Alexusmai\LaravelFileManager\Events\BeforeInitialization;
-use Alexusmai\LaravelFileManager\Events\Deleting;
-use Alexusmai\LaravelFileManager\Events\DirectoryCreated;
-use Alexusmai\LaravelFileManager\Events\DirectoryCreating;
-use Alexusmai\LaravelFileManager\Events\DiskSelected;
-use Alexusmai\LaravelFileManager\Events\Download;
-use Alexusmai\LaravelFileManager\Events\FileCreated;
-use Alexusmai\LaravelFileManager\Events\FileCreating;
-use Alexusmai\LaravelFileManager\Events\FilesUploaded;
-use Alexusmai\LaravelFileManager\Events\FilesUploading;
-use Alexusmai\LaravelFileManager\Events\FileUpdate;
-use Alexusmai\LaravelFileManager\Events\Paste;
-use Alexusmai\LaravelFileManager\Events\Rename;
-use Alexusmai\LaravelFileManager\Events\Zip as ZipEvent;
-use Alexusmai\LaravelFileManager\Events\Unzip as UnzipEvent;
-use Alexusmai\LaravelFileManager\Requests\RequestValidator;
-use Alexusmai\LaravelFileManager\FileManager;
-use Alexusmai\LaravelFileManager\Services\Zip;
+use Alimardani94\LaravelFileManager\Events\BeforeInitialization;
+use Alimardani94\LaravelFileManager\Events\Deleting;
+use Alimardani94\LaravelFileManager\Events\DirectoryCreated;
+use Alimardani94\LaravelFileManager\Events\DirectoryCreating;
+use Alimardani94\LaravelFileManager\Events\DiskSelected;
+use Alimardani94\LaravelFileManager\Events\Download;
+use Alimardani94\LaravelFileManager\Events\FileCreated;
+use Alimardani94\LaravelFileManager\Events\FileCreating;
+use Alimardani94\LaravelFileManager\Events\FilesUploaded;
+use Alimardani94\LaravelFileManager\Events\FilesUploading;
+use Alimardani94\LaravelFileManager\Events\FileUpdate;
+use Alimardani94\LaravelFileManager\Events\Paste;
+use Alimardani94\LaravelFileManager\Events\Rename;
+use Alimardani94\LaravelFileManager\Events\Zip as ZipEvent;
+use Alimardani94\LaravelFileManager\Events\Unzip as UnzipEvent;
+use Alimardani94\LaravelFileManager\Requests\RequestValidator;
+use Alimardani94\LaravelFileManager\FileManager;
+use Alimardani94\LaravelFileManager\Services\Zip;
 use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Alexusmai\LaravelFileManager\Services\TransferService;
+namespace Alimardani94\LaravelFileManager\Services\TransferService;
 
 class TransferFactory
 {

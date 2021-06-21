@@ -1,8 +1,8 @@
 <?php
 
-namespace Alexusmai\LaravelFileManager\Services\ACLService;
+namespace Alimardani94\LaravelFileManager\Services\ACLService;
 
-use Alexusmai\LaravelFileManager\Services\ConfigService\ConfigRepository;
+use Alimardani94\LaravelFileManager\Services\ConfigService\ConfigRepository;
 use Illuminate\Support\Arr;
 use Cache;
 

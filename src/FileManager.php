@@ -1,13 +1,13 @@
 <?php
 
-namespace Alexusmai\LaravelFileManager;
+namespace Alimardani94\LaravelFileManager;
 
-use Alexusmai\LaravelFileManager\Events\Deleted;
-use Alexusmai\LaravelFileManager\Traits\CheckTrait;
-use Alexusmai\LaravelFileManager\Traits\ContentTrait;
-use Alexusmai\LaravelFileManager\Traits\PathTrait;
-use Alexusmai\LaravelFileManager\Services\TransferService\TransferFactory;
-use Alexusmai\LaravelFileManager\Services\ConfigService\ConfigRepository;
+use Alimardani94\LaravelFileManager\Events\Deleted;
+use Alimardani94\LaravelFileManager\Traits\CheckTrait;
+use Alimardani94\LaravelFileManager\Traits\ContentTrait;
+use Alimardani94\LaravelFileManager\Traits\PathTrait;
+use Alimardani94\LaravelFileManager\Services\TransferService\TransferFactory;
+use Alimardani94\LaravelFileManager\Services\ConfigService\ConfigRepository;
 use Illuminate\Support\Str;
 use Illuminate\Support\Arr;
 use Storage;

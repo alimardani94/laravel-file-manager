@@ -1,17 +1,5 @@
 # Laravel File Manager
 
-[![Latest Stable Version](https://poser.pugx.org/alexusmai/laravel-file-manager/v/stable)](https://packagist.org/packages/alexusmai/laravel-file-manager)
-[![Total Downloads](https://poser.pugx.org/alexusmai/laravel-file-manager/downloads)](https://packagist.org/packages/alexusmai/laravel-file-manager)
-[![Latest Unstable Version](https://poser.pugx.org/alexusmai/laravel-file-manager/v/unstable)](https://packagist.org/packages/alexusmai/laravel-file-manager)
-[![License](https://poser.pugx.org/alexusmai/laravel-file-manager/license)](https://packagist.org/packages/alexusmai/laravel-file-manager)
-
-
-![Laravel File Manager](https://raw.github.com/alexusmai/vue-laravel-file-manager/master/src/assets/laravel-file-manager.gif?raw=true)
-
-**DEMO:** [Laravel File Manager](http://file-manager.webmai.ru/)
-
-**Vue.js Frontend:** [alexusmai/vue-laravel-file-manager](https://github.com/alexusmai/vue-laravel-file-manager)
-
 ## Documentation
 
 [Laravel File Manager Docs](./docs/index.md)
@@ -24,7 +12,6 @@
 
 ## Features
 
-* Frontend on Vue.js - [vue-laravel-file-manager](https://github.com/alexusmai/vue-laravel-file-manager)
 * Work with the file system is organized by the standard means Laravel Flysystem:
   * Local, FTP, S3, Dropbox ...
   * The ability to work only with the selected disks
@@ -65,37 +52,3 @@
 * Thumbnails lazy load
 * Dynamic configuration (v2.4)
 * Supported locales : ru, en, ar, sr, cs, de, es, nl, zh-CN, fa, it, tr, fr, pt-BR, zh-TW, pl
-
-## In a new version 2.5
-
-You can change Route prefix (default - 'file-manager')
-
-```php
-/**
- * LFM Route prefix
- * !!! WARNING - if you change it, you should compile frontend with new prefix(baseUrl) !!!
- */
-'routePrefix' => 'file-manager',
-```
-
-Open PDF files in a new tab (test) - use 'double-click'
-
-## Upgrading to version 2.5
-
-Add a new parameter to the configuration file (config/file-manager.php)
-
-```php
-/**
- * LFM Route prefix
- * !!! WARNING - if you change it, you should compile frontend with new prefix(baseUrl) !!!
- */
-'routePrefix' => 'file-manager',
-
-```
-
-Update pre-compiled css and js files.
-
-
-```php
-php artisan vendor:publish --tag=fm-assets --force
-```

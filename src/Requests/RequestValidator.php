@@ -1,8 +1,8 @@
 <?php
 
-namespace Alexusmai\LaravelFileManager\Requests;
+namespace Alimardani94\LaravelFileManager\Requests;
 
-use Alexusmai\LaravelFileManager\Services\ConfigService\ConfigRepository;
+use Alimardani94\LaravelFileManager\Services\ConfigService\ConfigRepository;
 use Illuminate\Foundation\Http\FormRequest;
 use Storage;
 

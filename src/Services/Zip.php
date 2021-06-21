@@ -1,11 +1,11 @@
 <?php
 
-namespace Alexusmai\LaravelFileManager\Services;
+namespace Alimardani94\LaravelFileManager\Services;
 
-use Alexusmai\LaravelFileManager\Events\UnzipCreated;
-use Alexusmai\LaravelFileManager\Events\UnzipFailed;
-use Alexusmai\LaravelFileManager\Events\ZipCreated;
-use Alexusmai\LaravelFileManager\Events\ZipFailed;
+use Alimardani94\LaravelFileManager\Events\UnzipCreated;
+use Alimardani94\LaravelFileManager\Events\UnzipFailed;
+use Alimardani94\LaravelFileManager\Events\ZipCreated;
+use Alimardani94\LaravelFileManager\Events\ZipFailed;
 use Illuminate\Http\Request;
 use RecursiveIteratorIterator;
 use RecursiveDirectoryIterator;

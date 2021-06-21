@@ -1,11 +1,11 @@
 <?php
 
-namespace Alexusmai\LaravelFileManager\Services\ACLService;
+namespace Alimardani94\LaravelFileManager\Services\ACLService;
 
 /**
  * Class DBACLRepository
  *
- * @package Alexusmai\LaravelFileManager\Services\ACLService
+ * @package Alimardani94\LaravelFileManager\Services\ACLService
  */
 class DBACLRepository implements ACLRepository
 {

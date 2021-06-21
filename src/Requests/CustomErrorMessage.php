@@ -1,6 +1,6 @@
 <?php
 
-namespace Alexusmai\LaravelFileManager\Requests;
+namespace Alimardani94\LaravelFileManager\Requests;
 
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Exceptions\HttpResponseException;
