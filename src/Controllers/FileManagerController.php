@@ -101,7 +101,7 @@ class FileManagerController extends Controller
 
         return response()->json([
             'result' => [
-                'status'  => 'success',
+                'status' => 'success',
                 'message' => 'diskSelected',
             ],
         ]);
@@ -342,7 +342,7 @@ class FileManagerController extends Controller
      * Create zip archive
      *
      * @param RequestValidator $request
-     * @param Zip              $zip
+     * @param Zip $zip
      *
      * @return array
      */
@@ -357,7 +357,7 @@ class FileManagerController extends Controller
      * Extract zip archive
      *
      * @param RequestValidator $request
-     * @param Zip              $zip
+     * @param Zip $zip
      *
      * @return array
      */

@@ -3,6 +3,8 @@
 namespace Alimardani94\LaravelFileManager;
 
 use Alimardani94\LaravelFileManager\Events\Deleted;
+use Alimardani94\LaravelFileManager\Events\Pasted;
+use Alimardani94\LaravelFileManager\Events\Renamed;
 use Alimardani94\LaravelFileManager\Traits\CheckTrait;
 use Alimardani94\LaravelFileManager\Traits\ContentTrait;
 use Alimardani94\LaravelFileManager\Traits\PathTrait;
@@ -25,7 +27,7 @@ class FileManager
     /**
      * FileManager constructor.
      *
-     * @param  ConfigRepository  $configRepository
+     * @param ConfigRepository $configRepository
      */
     public function __construct(ConfigRepository $configRepository)
     {
@@ -43,20 +45,20 @@ class FileManager
         if (!config()->has('file-manager')) {
             return [
                 'result' => [
-                    'status'  => 'danger',
+                    'status' => 'danger',
                     'message' => 'noConfig'
                 ],
             ];
         }
 
         $config = [
-            'acl'           => $this->configRepository->getAcl(),
-            'leftDisk'      => $this->configRepository->getLeftDisk(),
-            'rightDisk'     => $this->configRepository->getRightDisk(),
-            'leftPath'      => $this->configRepository->getLeftPath(),
-            'rightPath'     => $this->configRepository->getRightPath(),
+            'acl' => $this->configRepository->getAcl(),
+            'leftDisk' => $this->configRepository->getLeftDisk(),
+            'rightDisk' => $this->configRepository->getRightDisk(),
+            'leftPath' => $this->configRepository->getLeftPath(),
+            'rightPath' => $this->configRepository->getRightPath(),
             'windowsConfig' => $this->configRepository->getWindowsConfig(),
-            'hiddenFiles'   => $this->configRepository->getHiddenFiles(),
+            'hiddenFiles' => $this->configRepository->getHiddenFiles(),
         ];
 
         // disk list
@@ -73,7 +75,7 @@ class FileManager
 
         return [
             'result' => [
-                'status'  => 'success',
+                'status' => 'success',
                 'message' => null,
             ],
             'config' => $config,
@@ -94,12 +96,12 @@ class FileManager
         $content = $this->getContent($disk, $path);
 
         return [
-            'result'      => [
-                'status'  => 'success',
+            'result' => [
+                'status' => 'success',
                 'message' => null,
             ],
             'directories' => $content['directories'],
-            'files'       => $content['files'],
+            'files' => $content['files'],
         ];
     }
 
@@ -116,8 +118,8 @@ class FileManager
         $directories = $this->getDirectoriesTree($disk, $path);
 
         return [
-            'result'      => [
-                'status'  => 'success',
+            'result' => [
+                'status' => 'success',
                 'message' => null,
             ],
             'directories' => $directories,
@@ -142,7 +144,7 @@ class FileManager
             // skip or overwrite files
             if (!$overwrite
                 && Storage::disk($disk)
-                    ->exists($path.'/'.$file->getClientOriginalName())
+                    ->exists($path . '/' . $file->getClientOriginalName())
             ) {
                 continue;
             }
@@ -178,7 +180,7 @@ class FileManager
         if ($fileNotUploaded) {
             return [
                 'result' => [
-                    'status'  => 'warning',
+                    'status' => 'warning',
                     'message' => 'notAllUploaded',
                 ],
             ];
@@ -186,7 +188,7 @@ class FileManager
 
         return [
             'result' => [
-                'status'  => 'success',
+                'status' => 'success',
                 'message' => 'uploaded',
             ],
         ];
@@ -226,7 +228,7 @@ class FileManager
 
         return [
             'result' => [
-                'status'  => 'success',
+                'status' => 'success',
                 'message' => 'deleted',
             ],
         ];
@@ -253,7 +255,11 @@ class FileManager
 
         $transferService = TransferFactory::build($disk, $path, $clipboard);
 
-        return $transferService->filesTransfer();
+        $result = $transferService->filesTransfer();
+
+        event(new Pasted($disk, $path, $clipboard));
+
+        return $result;
     }
 
     /**
@@ -269,9 +275,11 @@ class FileManager
     {
         Storage::disk($disk)->move($oldName, $newName);
 
+        event(new Renamed($disk, $newName, $oldName));
+
         return [
             'result' => [
-                'status'  => 'success',
+                'status' => 'success',
                 'message' => 'renamed',
             ],
         ];
@@ -356,10 +364,10 @@ class FileManager
     {
         return [
             'result' => [
-                'status'  => 'success',
+                'status' => 'success',
                 'message' => null,
             ],
-            'url'    => Storage::disk($disk)->url($path),
+            'url' => Storage::disk($disk)->url($path),
         ];
     }
 
@@ -381,7 +389,7 @@ class FileManager
         if (Storage::disk($disk)->exists($directoryName)) {
             return [
                 'result' => [
-                    'status'  => 'warning',
+                    'status' => 'warning',
                     'message' => 'dirExist',
                 ],
             ];
@@ -401,12 +409,12 @@ class FileManager
         $tree['props'] = ['hasSubdirectories' => false];
 
         return [
-            'result'    => [
-                'status'  => 'success',
+            'result' => [
+                'status' => 'success',
                 'message' => 'dirCreated',
             ],
             'directory' => $directoryProperties,
-            'tree'      => [$tree],
+            'tree' => [$tree],
         ];
     }
 
@@ -428,7 +436,7 @@ class FileManager
         if (Storage::disk($disk)->exists($path)) {
             return [
                 'result' => [
-                    'status'  => 'warning',
+                    'status' => 'warning',
                     'message' => 'fileExist',
                 ],
             ];
@@ -442,10 +450,10 @@ class FileManager
 
         return [
             'result' => [
-                'status'  => 'success',
+                'status' => 'success',
                 'message' => 'fileCreated',
             ],
-            'file'   => $fileProperties,
+            'file' => $fileProperties,
         ];
     }
 
@@ -475,10 +483,10 @@ class FileManager
 
         return [
             'result' => [
-                'status'  => 'success',
+                'status' => 'success',
                 'message' => 'fileUpdated',
             ],
-            'file'   => $fileProperties,
+            'file' => $fileProperties,
         ];
     }
 
