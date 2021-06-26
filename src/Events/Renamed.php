@@ -63,7 +63,7 @@ class Renamed
      */
     public function type()
     {
-        $info = Storage::disk($this->disk)->getMetadata($this->oldName);
+        $info = Storage::disk($this->disk)->getMetadata($this->newName);
 
         return $info['type'];
     }
