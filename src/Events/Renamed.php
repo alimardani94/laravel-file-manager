@@ -3,6 +3,7 @@
 namespace Alimardani94\LaravelFileManager\Events;
 
 use Illuminate\Http\Request;
+use Storage;
 
 class Renamed
 {
@@ -21,6 +22,10 @@ class Renamed
      */
     private $oldName;
 
+    /**
+     * @var string
+     */
+    private $type;
 
     public function __construct($disk, $newName, $oldName)
     {
@@ -51,5 +56,15 @@ class Renamed
     public function oldName()
     {
         return $this->oldName;
+    }
+
+    /**
+     * @return string
+     */
+    public function type()
+    {
+        $info = Storage::disk($this->disk)->getMetadata($this->oldName);
+
+        return $info['type'];
     }
 }
