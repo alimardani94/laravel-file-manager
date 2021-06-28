@@ -289,7 +289,7 @@ class FileManager
             Storage::disk($disk)->move($oldName, $newName);
         }
 
-        event(new Renamed($disk, $newName, $oldName));
+        event(new Renamed($disk, $newName, $oldName, $type));
 
         return [
             'result' => [

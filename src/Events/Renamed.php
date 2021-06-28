@@ -27,11 +27,12 @@ class Renamed
      */
     private $type;
 
-    public function __construct($disk, $newName, $oldName)
+    public function __construct($disk, $newName, $oldName, $type)
     {
         $this->disk = $disk;
         $this->newName = $newName;
         $this->oldName = $oldName;
+        $this->type = $type;
     }
 
     /**
@@ -63,8 +64,6 @@ class Renamed
      */
     public function type()
     {
-        $info = Storage::disk($this->disk)->getMetadata($this->newName);
-
-        return $info['type'];
+        return $this->type;
     }
 }
